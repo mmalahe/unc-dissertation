@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{unc_dissertation}
+
+%Font packages
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+
+%Bilbiography styles
+\bibliographystyle{ieeetr}
+
+%% Math Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+%% Normal LaTeX or pdfLaTeX? %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{ifpdf}
+
+%% Packages for Graphics & Figures %%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifpdf %%Inclusion of graphics via \includegraphics{file}
+	\usepackage[pdftex]{graphicx} %%graphics in pdfLaTeX
+\else
+	\usepackage[dvips]{graphicx} %%graphics and normal LaTeX
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT SETTINGS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Dissertation Title}
+\author{Dissertation Author}
+\committee{Advisor}{Committee Member}{Committee Member}{Committee Member}{Committee Member}
+\date{January 1, 1970}
+
+\input{abstract.tex}
+
+\dedication{To someone}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\linespread{1.0}
+\begin{document}
+
+%% File Extensions of Graphics %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifpdf
+	\DeclareGraphicsExtensions{.pdf,.jpg,.png}
+\else
+	\DeclareGraphicsExtensions{.eps}
+\fi
+
+\pagestyle{empty} %No headings for the first pages.
+
+%%%%%%%%%%%%%%%%%
+%% INITIAL THINGS
+%%%%%%%%%%%%%%%%%
+\frontmatter
+
+\maketitle
+
+\chapter*{Acknowledgements}
+\input{acknowledgements.tex}
+
+\tableofcontents 
+
+\listoffigures
+
+\listoftables
+
+\mainmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%MAIN CHAPTERS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Chapter 1
+\chapter{Introduction}
+\input{chapter1.tex}
+
+% Chapter 2
+\chapter{Background}
+\input{chapter2.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BIBLIOGRAPHY AND OTHER LISTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Bibliography
+%\inputencoding{latin2}
+\bibliography{dissertation}
+%\inputencoding{utf8}
+\addtocontents{toc}{\protect\vspace*{\baselineskip}}
+
+% Add bibliography to contents page
+\addcontentsline{toc}{chapter}{Bibliography} %'Bibliography' into toc
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% APPENDICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\chapter{}
+\section{}
+
+\end{document}
