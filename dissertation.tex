@@ -18,6 +18,14 @@
 \usepackage{amssymb}
 \usepackage{geometry}
 
+%% Reduce spacing between paragraph and section title %%%%%%%
+%% @todo: Put this modification in the class file itself.
+\usepackage{titlesec}
+\titlespacing*{\section}
+{0pt}{-5pt}{0pt}
+\titlespacing*{\subsection}
+{0pt}{-5pt}{0pt}
+
 %% Normal LaTeX or pdfLaTeX? %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{ifpdf}
 
@@ -53,11 +61,12 @@
 	\DeclareGraphicsExtensions{.eps}
 \fi
 
-\pagestyle{empty} %No headings for the first pages.
+\pagestyle{empty} %No headings or page numbers for the first pages unless otherwise specified
 
 %%%%%%%%%%%%%%%%%
 %% INITIAL THINGS
 %%%%%%%%%%%%%%%%%
+
 \frontmatter
 
 \maketitle
