@@ -10,6 +10,10 @@
 %Bilbiography styles
 \bibliographystyle{ieeetr}
 
+% List of acronyms
+\usepackage{longtable}
+\usepackage[acronym]{glossaries}
+
 %% Math Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -47,6 +51,17 @@
 \input{abstract.tex}
 
 \dedication{To someone}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GLOSSARIES AND ABBREVIATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% To update the printed glossary, you need to run:
+% - pdflatex dissertation
+% - makeglossaries dissertation
+% - pdflatex dissertation
+% On Windows, you might need to install Perl first.
+\newacronym{unc}{UNC}{The University of North Carolina at Chapel Hill}
+\makeglossaries
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% DOCUMENT
@@ -108,6 +123,9 @@
 
 % Add bibliography to contents page
 \addcontentsline{toc}{chapter}{Bibliography} %'Bibliography' into toc
+
+% Glossaries and abbreviations
+\printglossary[type=\acronymtype,title=Abbreviations]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% APPENDICES
