@@ -485,7 +485,11 @@
 
 %The abstract blurb (appears after the title of the abstract page, you shouldn't have to change this).
 \DeclareAuthorVariable*{abstractblurb}
-\abstractblurb{\@author: \@title\par (Under the direction of \my@advisor)}
+\abstractblurb{\@author: \@title\par (Under the direction of \my@advisor{ }and \my@readerA)} 
+
+% For those of us with two advisors (i.e., Rich and Roberto), comment above and uncomment below.
+% Need the { } to force a space between the first advisor's last name and the word "and."
+%\abstractblurb{\@author: \@title\par (Under the direction of \my@advisor{ }and \my@readerA)} 
 
 %Width of the abstract blurb, specified as a percentage of the width of the body (i.e. the text area, not including margins). At 1.0 the blurb tends to look weird if you have a really long title, so defaults to .75.  
 \DeclareAuthorVariable*{abstractblurbwidth}
