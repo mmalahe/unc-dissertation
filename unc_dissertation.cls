@@ -485,7 +485,7 @@
 
 %The abstract blurb (appears after the title of the abstract page, you shouldn't have to change this).
 \DeclareAuthorVariable*{abstractblurb}
-\abstractblurb{\@author: \@title\par (Under the direction of \my@advisor{ }and \my@readerA)} 
+\abstractblurb{\@author: \@title\par (Under the direction of \my@advisor)} 
 
 % For those of us with two advisors (i.e., Rich and Roberto), comment above and uncomment below.
 % Need the { } to force a space between the first advisor's last name and the word "and."
