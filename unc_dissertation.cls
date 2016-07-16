@@ -347,9 +347,8 @@
 % This package makes the text prettier.
 \RequirePackage[protrusion,expansion,tracking,kerning,letterspace=25]{microtype}
 
-
-
-
+% This package allows for glossaries
+\RequirePackage[acronym]{glossaries}
 
 %---------------------------------------------COMMANDS PROVIDED---------------------------------------------
 
@@ -520,7 +519,9 @@
 \DeclareAuthorVariable*{lofname}
 \lofname{LIST OF FIGURES} 
 \DeclareAuthorVariable*{lotname}
-\lotname{LIST OF TABLES} 
+\lotname{LIST OF TABLES}
+\DeclareAuthorVariable*{loaname}
+\loaname{LIST OF ABBREVIATIONS} 
 \DeclareAuthorVariable*{bblname}
 \bblname{REFERENCES} 
 
@@ -839,7 +840,7 @@
 \newif\ifmy@isalist
 \my@isalistfalse
 
-%And set the flag when you call \listoffigures or \listoftables
+%And set the flag when you call \listoffigures, \listoftables or \listofabbreviations
 \renewcommand\listoffigures{%
     \if@twocolumn
       \@restonecoltrue\onecolumn
@@ -867,6 +868,17 @@
           \MakeUppercase\listtablename}%
          {\MakeUppercase\listtablename}%
     \@starttoc{lot}%
+    \if@restonecol\twocolumn\fi
+    \my@isalistfalse
+    }
+\providecommand\listofabbreviations{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \my@isalisttrue
+    \printglossary[type=\acronymtype,title=\listabbreviationname]
     \if@restonecol\twocolumn\fi
     \my@isalistfalse
     }
@@ -964,7 +976,7 @@
 \renewcommand{\contentsname}{\my@tocname}
 \renewcommand{\listfigurename}{\my@lofname}
 \renewcommand{\listtablename}{\my@lotname}
-
+\providecommand{\listabbreviationname}{\my@loaname}
 
 % Anything that comes before the table of contents should not have an entry in the toc. To implement this requirement, I define a flag \my@isthereatoc, defaulting to false.
 
