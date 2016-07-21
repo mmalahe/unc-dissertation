@@ -1,5 +1,10 @@
 unc_dissertation.cls - README
 
+MAINTENANCE AND DISTRIBUTION
+----------------------------
+If you've come to this repo from a link in the UNC math grad resources Sakai page, and the person who owns this repo isn't currently a student at UNC, please fork this repo and replace the link with a link to your fork.
+
+
 ----------- USAGE -----------
  
 At the beginning of your main .tex file, include the line:
